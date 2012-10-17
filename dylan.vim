@@ -42,9 +42,19 @@ syn keyword	dylanStatement		define let
 syn keyword	dylanImport		use import export exclude rename create
 syn keyword	dylanMiscMods		open sealed domain singleton sideways inline functional
 
-" Matching rules for special forms
-syn match	dylanOperator		"\s[-!%&\*\+/=\?@\\^|~:]\+[-#!>%&:\*\+/=\?@\\^|~]*"
-syn match	dylanOperator		"\(\<[A-Z][a-zA-Z0-9_']*\.\)\=:[-!#$%&\*\+./=\?@\\^|~:]*"
+" Unary operators
+syn match	dylanOperator		"-\|\~"
+" Binary operators
+syn match	dylanOperator		"\s[+\|\-\|*\|/\|\^\|=\|&\||\|>\|<]\s"
+syn match	dylanOperator		"\s==\s"
+syn match	dylanOperator		"\s:=\s"
+syn match	dylanOperator		"\s>=\s"
+syn match	dylanOperator		"\s<=\s"
+syn match	dylanOperator		"\s\~=\s"
+syn match	dylanOperator		"\s\~==\s"
+syn match	dylanOperator		"\s=>\s"
+syn match	dylanOperator		"\s=>$"
+syn match	dylanOperator		"\s::\s"
 " Numbers
 syn match	dylanNumber		"\<[0-9]\+\>\|\<0[xX][0-9a-fA-F]\+\>\|\<0[oO][0-7]\+\>"
 syn match	dylanNumber		"\<[0-9]\+\.[0-9]\+\([eE][-+]\=[0-9]\+\)\=\>"
