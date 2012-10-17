@@ -20,8 +20,10 @@ syn case ignore
 
 if version < 600
   set lisp
+  set iskeyword+=?
 else
   setlocal lisp
+  setlocal iskeyword+=?
 endif
 
 " Highlight special characters (those that have backslashes) differently
@@ -66,6 +68,45 @@ syn region	dylanPrecondit		start="^\s*#\s*\(if\>\|else\>\|endif\>\)" skip="\\$" 
 " don't generally appear in the middle of a line of code.
 syn region	dylanHeader	start="^[Mm]odule:" end="^$" contains=@Spell
 
+" Functions defined in the DRM
+syn keyword dylanFunction abort abs add add! add-method add-new add-new!
+syn keyword dylanFunction all-superclasses always any? applicable-method?
+syn keyword dylanFunction apply aref aref-setter as as-lowercase as-lowercase!
+syn keyword dylanFunction as-uppercase as-uppercase! ash backward-iteration-protocol
+syn keyword dylanFunction break ceiling ceiling/ cerror check-type choose
+syn keyword dylanFunction choose-by complement compose concatenate
+syn keyword dylanFunction concatenate-as condition-format-arguments
+syn keyword dylanFunction condition-format-string conjoin copy-sequence
+syn keyword dylanFunction curry default-handler dimension dimensions
+syn keyword dylanFunction direct-subclasses direct-superclasses disjoin
+syn keyword dylanFunction do do-handlers element element-setter empty?
+syn keyword dylanFunction error even? every? false-or fill! find-key
+syn keyword dylanFunction find-method first first-setter floor floor/
+syn keyword dylanFunction forward-iteration-protocol function-arguments
+syn keyword dylanFunction function-return-values function-specializers
+syn keyword dylanFunction gcd generic-function-mandatory-keywords
+syn keyword dylanFunction generic-function-methods head head-setter
+syn keyword dylanFunction identity initialize instance? integral?
+syn keyword dylanFunction intersection key-sequence key-test last
+syn keyword dylanFunction last-setter lcm limited list logand logbit?
+syn keyword dylanFunction logior lognot logxor make map map-as map-into
+syn keyword dylanFunction max member? merge-hash-codes min modulo negative
+syn keyword dylanFunction negative? next-method object-class object-hash
+syn keyword dylanFunction odd? one-of pair pop pop-last positive? push
+syn keyword dylanFunction push-last range rank rcurry reduce reduce1
+syn keyword dylanFunction remainder remove remove! remove-duplicates
+syn keyword dylanFunction remove-duplicates! remove-key! remove-method
+syn keyword dylanFunction replace-elements! replace-subsequence!
+syn keyword dylanFunction restart-query return-allowed? return-description
+syn keyword dylanFunction return-query reverse reverse! round round/
+syn keyword dylanFunction row-major-index second second-setter shallow-copy
+syn keyword dylanFunction signal singleton size size-setter slot-initialized?
+syn keyword dylanFunction sort sort! sorted-applicable-methods subsequence-position
+syn keyword dylanFunction subtype? table-protocol tail tail-setter third third-setter
+syn keyword dylanFunction truncate truncate/ type-error-expected-type
+syn keyword dylanFunction type-error-value type-for-copy type-union
+syn keyword dylanFunction union values vector zero
+
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
 " For version 5.8 and later: only when an item doesn't have highlighting yet
@@ -86,6 +127,7 @@ if version >= 508 || !exists("did_dylan_syntax_inits")
   HiLink dylanConditional	Conditional
   HiLink dylanConstant		Constant
   HiLink dylanException		Exception
+  HiLink dylanFunction	Function
   HiLink dylanHeader		Macro
   HiLink dylanImport		Include
   HiLink dylanLabel		Label
