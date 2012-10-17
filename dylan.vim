@@ -49,10 +49,10 @@ syn match	dylanNumber		"\<[0-9]\+\.[0-9]\+\([eE][-+]\=[0-9]\+\)\=\>"
 " Booleans
 syn match	dylanBoolean		"#t\|#f"
 " Comments
-syn match	dylanComment		"//.*"
-syn region	dylanComment		start="/\*" end="\*/"
+syn match	dylanComment		"//.*" contains=@Spell
+syn region	dylanComment		start="/\*" end="\*/" contains=@Spell
 " Strings
-syn region	dylanString		start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=dySpecial
+syn region	dylanString		start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=dySpecial,@Spell
 syn match	dylanCharacter		"'[^\\]'"
 " Constants, classes, and variables
 syn match	dylanConstant		"$\<[a-zA-Z0-9\-]\+\>"
@@ -64,7 +64,7 @@ syn region	dylanPrecondit		start="^\s*#\s*\(if\>\|else\>\|endif\>\)" skip="\\$" 
 " These appear at the top of files (usually).  I like to highlight the whole line
 " so that the definition stands out.  They should probably really be keywords, but they
 " don't generally appear in the middle of a line of code.
-syn region	dylanHeader	start="^[Mm]odule:" end="^$"
+syn region	dylanHeader	start="^[Mm]odule:" end="^$" contains=@Spell
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
