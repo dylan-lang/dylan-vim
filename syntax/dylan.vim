@@ -40,7 +40,7 @@ syn keyword	dylanConditional	if when select case else elseif unless finally othe
 syn keyword	dylanRepeat		begin for until while from to
 syn keyword	dylanStatement		define let
 syn keyword	dylanImport		use import export exclude rename create
-syn keyword	dylanMiscMods		open sealed domain singleton sideways inline functional
+syn keyword	dylanMiscMods		open sealed domain singleton sideways inline
 
 " Unary operators
 syn match	dylanOperator		"-\|\~"
