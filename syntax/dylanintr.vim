@@ -4,12 +4,17 @@
 " Last Change:	Fri Sep 29 13:53:27 PDT 2000
 "
 
-" For version 5.x: Clear all syntax items
-" For version 6.x: Quit when a syntax file was already loaded
-if version < 600
-  syntax clear
-elseif exists("b:current_syntax")
+" Quit when a syntax file was already loaded
+if exists("b:current_syntax")
   finish
+endif
+
+" Include Dylan syntax
+if version >= 600
+  runtime! syntax/dylan.vim
+  unlet b:current_syntax
+else
+  so $VIMRUNTIME/syntax/dylan.vim
 endif
 
 syn case ignore
