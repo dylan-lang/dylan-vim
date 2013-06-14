@@ -62,7 +62,7 @@ syn match	dylanNumber		"\<[0-9]\+\.[0-9]\+\([eE][-+]\=[0-9]\+\)\=\>"
 syn match	dylanBoolean		"#t\|#f"
 " Comments
 syn match	dylanComment		"//.*" contains=@Spell
-syn region	dylanComment		start="/\*" end="\*/" contains=@Spell
+syn region	dylanCommentMulti		start="/\*" end="\*/" contains=DylanCommentMulti,@Spell
 " Strings
 syn region	dylanString		start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=dySpecial,@Spell
 syn match	dylanCharacter		"'[^\\]'"
@@ -134,6 +134,7 @@ if version >= 508 || !exists("did_dylan_syntax_inits")
   HiLink dylanClass		Structure
   HiLink dylanClassMods		StorageClass
   HiLink dylanComment		Comment
+  HiLink dylanCommentMulti		Comment
   HiLink dylanConditional	Conditional
   HiLink dylanConstant		Constant
   HiLink dylanException		Exception
