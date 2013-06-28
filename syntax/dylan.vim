@@ -68,7 +68,7 @@ syn region	dylanString		start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=dySpecial,@S
 syn match	dylanCharacter		"'[^\\]'"
 " Constants, classes, and variables
 syn match	dylanConstant		"$\<[a-zA-Z0-9\-]\+\>"
-syn match	dylanClass		"<\<[a-zA-Z0-9\-]\+\>>"
+syn match	dylanClass		"<\<[a-zA-Z0-9\-\*\/]\+\>>"
 syn match	dylanVariable		"\*\<[a-zA-Z0-9\-]\+\>\*"
 " Preconditions
 syn region	dylanPrecondit		start="^\s*#\s*\(if\>\|else\>\|endif\>\)" skip="\\$" end="$"
