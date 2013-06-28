@@ -43,7 +43,7 @@ syn keyword	dylanImport		use import export exclude rename create
 syn keyword	dylanMiscMods		open dynamic compiler-open sealed domain singleton sideways inline may-inline inline-only
 
 " Unary operators
-syn match	dylanOperator		"[\t \(\[]-\|\~"
+syn match	dylanOperator		"-\|\~"
 " Binary operators
 syn match	dylanOperator		"\s[+\|\-\|*\|/\|\^\|=\|&\||\|>\|<]\s"
 syn match	dylanOperator		"\s==\s"
